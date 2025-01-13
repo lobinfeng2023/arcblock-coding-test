@@ -1,0 +1,38 @@
+.user{
+    display: flex;
+    justify-content: center;
+    &-profile {
+        border: 1px solid #edeaea;
+        margin: 24px 0;
+        border-radius: 6px;
+        padding: 12px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        &-avatar {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #edeaea;
+        }
+        &-content {
+            min-width: 360px;
+            &.form {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                .MuiFormControl-root {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        &-footer {
+            &-btn {
+                display: flex;
+                gap: 20px;
+                justify-content: space-between;
+            }
+        }
+    }
+}

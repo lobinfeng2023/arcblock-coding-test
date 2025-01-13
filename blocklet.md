@@ -1,3 +1,3 @@
-# Please update here
+# template-react
 
-A did wallet dapp template.
+A react template for creating a new blocklet project.

@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create Blocklet](https://github.com/blocklet/create-blocklet).
 
-This is a full stack app (react.js + express.js) with DID Wallet integration. That means you can use your DID wallet to login and get a user session.
+This blocklet is a dapp project, which means this is a full-stack application. It's contained both `server` and `client` code.
 
 ## File Structure
 
@@ -11,12 +11,13 @@ This is a full stack app (react.js + express.js) with DID Wallet integration. Th
   - favicon.svg - favicon
   - index.html - main html file, template for react
 - screenshots/ - Screenshots
-- api/ - Api side code
-  - hooks/ - blocklet lifecycle hooks
-  - libs/ - Api side libraries
-  - middlewares/ - Api side middlewares
-  - routes/ - Api side routes
-  - index.js - Api side entry point
+- api/
+  - src/ - Api side code
+    - hooks/ - blocklet lifecycle hooks
+    - libs/ - Api side libraries
+    - middlewares/ - Api side middlewares
+    - routes/ - Api side routes
+    - index.ts - Api side entry point
 - src/ - Client side code (A standard react app structure)
 - .env - Environment variables
 - .env.local - Local environment variables
@@ -119,19 +120,3 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
 The code is licensed under the Apache 2.0 license found in the
 [LICENSE](LICENSE) file.
-
-
-
-## 启动 
-首先得启动blocklet server
-```shell
-blocklet server start
-```
-## 停止blocklet server
-```shell
-blocklet server start
-```
-链接新的网络之后需要重启blocklet server出现一下错误
-✖ Unable to stop Blocklet Server, please stop the development by pressing Ctrl + C in the terminal of z2qa5Z5dEkdjc5CXzQwqdc1smtSs5g2cwpTSQ
-
-出现以上错误的原因是由于Blocklets还在运行需要先停止，但是这个时候只能使用 ip 来访问停止，停止之后等一会儿再运行启动就好了

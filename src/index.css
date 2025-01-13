@@ -1,21 +1,3 @@
-body {
-  background-color: #fff;
-  width: 100%;
-  height: 100vh;
-}
-
-#app {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,7 +12,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+#app {
+  width: 100%;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -40,6 +24,13 @@ a:hover {
   color: #535bf2;
 }
 
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
 
 h1 {
   font-size: 3.2em;
