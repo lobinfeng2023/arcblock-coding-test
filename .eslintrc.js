@@ -9,6 +9,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     // 关闭占位符_报错
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-require-imports': 'off',
   },
   ignorePatterns: ['**/*.d.ts'], // 排除所有 .d.ts 文件
 };

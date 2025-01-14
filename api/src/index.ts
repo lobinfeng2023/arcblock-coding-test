@@ -7,10 +7,11 @@ import express from 'express';
 import 'express-async-errors';
 import path from 'path';
 
-import { name, version } from '../../package.json';
 import { errorHandler } from './libs/errorRequestHandler';
 import logger from './libs/logger';
 import routes from './routes';
+
+const { name, version } = require('../../package.json');
 
 dotenv.config();
 
