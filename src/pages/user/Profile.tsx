@@ -3,7 +3,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import Person4OutlinedIcon from '@mui/icons-material/Person4Outlined';
 import PhoneAndroidOutlinedIcon from '@mui/icons-material/PhoneAndroidOutlined';
 import LoadingButton from '@mui/lab/LoadingButton';
-import { Alert, Button, List, ListItem, ListItemIcon, ListItemText, Snackbar } from '@mui/material';
+import { Alert, Button, List, ListItem, ListItemIcon, ListItemText, Snackbar, Typography } from '@mui/material';
 import { Stack } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
@@ -143,7 +143,11 @@ const UserProfile = () => {
                     <Person4OutlinedIcon />
                   </ListItemIcon>
                   <ListItemText id="switch-list-label-wifi" primary={t('user.profile.name')} />
-                  <p className="user-profile-content-text">{userProfile.name}</p>
+                  <p className="user-profile-content-text">
+                    <Typography style={{ width: '160px' }} noWrap={true}>
+                      {userProfile.name}
+                    </Typography>
+                  </p>
                 </ListItem>
                 <ListItem>
                   <ListItemIcon>

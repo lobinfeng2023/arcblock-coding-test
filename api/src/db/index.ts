@@ -1,7 +1,10 @@
+import path from 'path';
 import sqlite3 from 'sqlite3';
 
 const isProduction = process.env.NODE_ENV === 'production';
-const dbPath = isProduction ? './data/db.sqlite' : '../../../data/db.sqlite';
+const dbPath = isProduction
+  ? path.resolve(__dirname, './data/db.sqlite')
+  : path.resolve(__dirname, '../../../data/db.sqlite');
 const db = new sqlite3.Database(dbPath);
 
 db.serialize(() => {
