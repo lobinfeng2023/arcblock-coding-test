@@ -11,14 +11,15 @@ author:
   email: lobinfeng@qq.com
 repository:
   type: git
-  url: git+https://github.com/lobinfeng2023/arcblock-coding-test
+  url: git+https://github.com/lobinfeng2023/arcblock-coding-test.git
 specVersion: 1.2.8
-version: 0.2.0
+version: 0.2.2
 logo: logo.png
 files:
   - dist
   - logo.png
   - screenshots
+  - data
 interfaces:
   - type: web
     name: publicUrl
