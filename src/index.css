@@ -68,3 +68,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+@media screen and (max-width: 500px) {
+  .user-profile-content {
+    min-width: 440px;
+  }
+}
