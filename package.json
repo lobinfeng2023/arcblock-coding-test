@@ -10,13 +10,11 @@
     "clean": "node scripts/build-clean.mjs",
     "bundle": "tsc --noEmit && npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
-    "bundle:api": "npm run clean && tsc -p tsconfig.api.json && blocklet bundle --compact --create-release",
+    "bundle:api": "npm run clean && tsc -p tsconfig.api.json && blocklet bundle --compact --external sqlite3 --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle --app-id zNKi1jtSK5gb4ec42fadLmDvSS12RL5NSKRU",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "prepare": "npx simple-git-hooks",
-    "bump-version": "zx --quiet scripts/bump-version.mjs",
-    "generate-prisma-client": "sh -c 'cd api && npx prisma generate'",
-    "postinstall": "pnpm run generate-prisma-client"
+    "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "lint-staged": {
     "*.{mjs,js,jsx,ts,tsx}": [
@@ -52,7 +50,6 @@
     "@ocap/client": "^1.19.2",
     "@ocap/mcrypto": "^1.19.2",
     "@ocap/wallet": "^1.19.2",
-    "@prisma/client": "6.2.1",
     "@toolpad/core": "^0.12.0",
     "axios": "^1.7.7",
     "cookie-parser": "^1.4.6",
