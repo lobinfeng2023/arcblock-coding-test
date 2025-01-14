@@ -1,5 +1,9 @@
+import { LocaleProvider } from '@arcblock/ux/lib/Locale/context';
 import { BrowserRouter as Router } from 'react-router-dom';
-import RouterView from './router'
+
+import { translations } from './locales';
+import RouterView from './router';
+
 function App() {
   return (
     <div className="app">
@@ -14,7 +18,9 @@ export default function WrappedApp() {
 
   return (
     <Router basename={basename}>
-      <App />
+      <LocaleProvider translations={translations} fallbackLocale="en">
+        <App />
+      </LocaleProvider>
     </Router>
   );
 }
