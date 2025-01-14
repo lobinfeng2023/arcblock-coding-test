@@ -69,7 +69,10 @@ button:focus-visible {
   }
 }
 @media screen and (max-width: 500px) {
+  .header-logo {
+    height: 32px;
+  }
   .user-profile-content {
-    min-width: 440px;
+    min-width: 100%;
   }
 }

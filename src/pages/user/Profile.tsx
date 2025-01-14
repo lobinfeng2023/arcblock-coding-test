@@ -137,7 +137,7 @@ const UserProfile = () => {
             </>
           ) : (
             <div className="user-profile-content">
-              <List sx={{ width: '100%', minWidth: 360, bgcolor: 'background.paper' }}>
+              <List sx={{ width: '100%', minWidth: 300, bgcolor: 'background.paper' }}>
                 <ListItem>
                   <ListItemIcon>
                     <Person4OutlinedIcon />
