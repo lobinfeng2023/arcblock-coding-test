@@ -14,7 +14,8 @@
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle --app-id zNKi1jtSK5gb4ec42fadLmDvSS12RL5NSKRU",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "prepare": "npx simple-git-hooks",
-    "bump-version": "zx --quiet scripts/bump-version.mjs"
+    "bump-version": "zx --quiet scripts/bump-version.mjs",
+    "deploy:remote": "blocklet deploy .blocklet/bundle --app-id zNKi6WVsV8YLVn8tUp52i7qNBuqbtFy3NpEj --endpoint https://bbqasqtbj536ipften4b4atubbxjidigkbmniddjlji.did.abtnet.io/.well-known/server/admin --access-key z1d3Cde3TNsuApKQC9JZYx7cvtW5HquLRY4 --access-secret z2dBrAAd6M4NqSQYMAgjbNzjEjso3fyy917jY7J3JHLQSWfrgcarTQfKyGJzjN2WMHqsLne4QBP4w5KBUWJbGaZ1W"
   },
   "lint-staged": {
     "*.{mjs,js,jsx,ts,tsx}": [
