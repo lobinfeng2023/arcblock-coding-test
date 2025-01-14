@@ -144,7 +144,7 @@ const UserProfile = () => {
                   </ListItemIcon>
                   <ListItemText id="switch-list-label-wifi" primary={t('user.profile.name')} />
                   <p className="user-profile-content-text">
-                    <Typography style={{ width: '160px' }} noWrap={true}>
+                    <Typography style={{ width: '160px' }} noWrap={true} align="right">
                       {userProfile.name}
                     </Typography>
                   </p>
