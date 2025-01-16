@@ -3,6 +3,7 @@ import { body, param, validationResult } from 'express-validator';
 
 import { fail, getBody, getParams, sucess } from '../libs/tools';
 import { createUser, findUserByEmail, findUserById, updateUser } from '../service/user';
+import { User } from '../types/user';
 
 const router = Router();
 
@@ -17,7 +18,7 @@ router.post('/user', userBodyValidator, async (req: Request, res: Response) => {
   if (!errors.isEmpty()) {
     return fail(res, errors.array(), 422);
   }
-  const body = getBody(req);
+  const body = getBody(req) as User;
   const user = await findUserByEmail(body.email);
   if (user) {
     return fail(res, 'user is not emty', 9001);
@@ -48,7 +49,7 @@ router.put(
       return fail(res, errors.array(), 422);
     }
     const { id } = getParams(req);
-    const body = getBody(req);
+    const body = getBody(req) as User;
     const userDetail = await findUserById(id);
     if (!userDetail) {
       return fail(res, 'user not exsit', 9001);
