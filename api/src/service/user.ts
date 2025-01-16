@@ -1,10 +1,14 @@
 import { randomUUID } from 'crypto';
 
 import db from '../db';
+import { User } from '../types/user';
 
-function fineOne(key: string, value: string) {
+type UserProfile = Omit<User, 'id'>;
+
+function findOne(key: keyof User, value: string): Promise<User | undefined> {
   return new Promise((resolve, reject) => {
-    db.get('SELECT * FROM user WHERE ' + key + ' = ?', [value], (err, row) => {
+    // 使用参数化查询，将 key 作为占位符传递
+    db.get('SELECT * FROM user WHERE $key = ?', { $key: key }, [value], (err: Error | null, row: User | undefined) => {
       if (err) {
         reject(err);
       } else {
@@ -13,7 +17,7 @@ function fineOne(key: string, value: string) {
     });
   });
 }
-function updateOne(id: string, user: any) {
+function updateOne(id: string, user: UserProfile) {
   return new Promise((resolve, reject) => {
     db.run(
       'UPDATE user SET name = ?, email = ?, phone = ? WHERE id = ?',
@@ -29,8 +33,11 @@ function updateOne(id: string, user: any) {
   });
 }
 
-export const createUser = async (user: any) => {
-  user.id = randomUUID();
+export const createUser = async (data: UserProfile) => {
+  const user: User = {
+    id: randomUUID(),
+    ...data,
+  };
   return new Promise((resolve, reject) => {
     db.run(
       'INSERT INTO user (id, name, email, phone) VALUES (?, ?, ?, ?)',
@@ -47,13 +54,13 @@ export const createUser = async (user: any) => {
 };
 
 export const findUserByEmail = async (email: string) => {
-  return fineOne('email', email);
+  return findOne('email', email);
 };
 
 export const findUserById = async (id: string) => {
-  return fineOne('id', id);
+  return findOne('id', id);
 };
 
-export const updateUser = async (id: string, user: any) => {
+export const updateUser = async (id: string, user: User) => {
   return updateOne(id, user);
 };
